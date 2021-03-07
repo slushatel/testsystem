@@ -1,6 +1,6 @@
 #include "MainWindow.h"
-#include "Questionwidget.cpp"
-#include "TestList.cpp"
+#include "Questionwidget.h"
+#include "TestList.h"
 #include <wx/simplebook.h>
 
 enum
@@ -31,7 +31,7 @@ MainWindow::MainWindow()
 
 	wxSimplebook *book = new wxSimplebook(this);
 	wxPanel *panel1 = new QuestionWidget(book);
-	wxPanel *panel2 = new TestList(book);
+	wxPanel *panel2 = new TestList(book, this);
 	book->ShowNewPage(panel1);
 	book->ShowNewPage(panel2);
 

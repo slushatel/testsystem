@@ -1,21 +1,13 @@
-#ifndef CONVERTER_H
-#define CONVERTER_H
 
 #include <string>
-#include "model/Test.cpp"
+#include "model/Test.h"
 #include "json.hpp"
 #include <iostream>
 #include <fstream>
-#include "model/Test.cpp"
+#include "Converter.h"
 
-class Converter
-{
-private:
-    /* data */
-public:
-    Converter(/* args */);
-    ~Converter();
-    static Test readTest(std::string path)
+namespace Converter {
+    Test readTest(std::string path)
     {
         // read a JSON file
         std::ifstream in("E:\\My_documents\\_Sasha\\cpp\\TestSystem\\src\\widgets\\test1.tst");
@@ -27,14 +19,4 @@ public:
         test.name = j["name"].get<std::string>();
         return test;
     }
-};
-
-// Converter::Converter(/* args */)
-// {
-// }
-
-// Converter::~Converter()
-// {
-// }
-
-#endif
+}

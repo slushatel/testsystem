@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "Question.cpp"
+#include "Question.h"
 
 struct Test {
 	std::string name;

@@ -1,6 +1,3 @@
-#ifndef FILEREADER_H
-#define FILEREADER_H
-
 #include <string>
 #include <vector>
 #include <iostream>
@@ -8,10 +5,9 @@
 #include "widgets/wx_include.h"
 namespace fs = std::filesystem;
 
-class FileReader
+namespace FileReader
 {
-    public:
-    static std::vector<fs::path> readFileList(std::string path)
+    std::vector<fs::path> readFileList(std::string path)
     {
         std::vector<fs::path> file_list;
         if (fs::exists(path)) {
@@ -27,5 +23,3 @@ class FileReader
         return file_list;
     }
 };
-
-#endif
