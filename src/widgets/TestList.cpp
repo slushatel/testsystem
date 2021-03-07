@@ -14,7 +14,7 @@ namespace {
 	}
 }
 
-TestList::TestList(wxWindow* parent) : wxPanel(parent)
+TestList::TestList(wxWindow* parent, int id_test_selected) : wxPanel(parent)
 {
 	wxBoxSizer* topSizer = new wxBoxSizer(wxVERTICAL);
 
@@ -24,17 +24,22 @@ TestList::TestList(wxWindow* parent) : wxPanel(parent)
 
 	wxBoxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 
-	wxButton* startButton = new wxButton(this, wxID_ANY, "Start");
-	startButton->Bind(wxEVT_BUTTON, &TestList::OnStart, this);
+	wxButton* startButton = new wxButton(this, id_test_selected, "Select");
+	//	startButton->Bind(wxEVT_BUTTON, &TestList::OnStart, this);
 	buttonSizer->Add(startButton, 0, wxALL, 10);
 
 	topSizer->Add(buttonSizer, 0, wxALIGN_CENTER);
 	SetSizerAndFit(topSizer);
 }
 
-void TestList::OnStart(wxCommandEvent& event)
+std::string TestList::get_selection()
 {
-	wxMessageBox("Selected: " + listBox->GetString(listBox->GetSelection()),
-		"Selection", wxOK | wxICON_INFORMATION);
+	return listBox->GetString(listBox->GetSelection());
 }
+
+//void TestList::OnStart(wxCommandEvent& event)
+//{
+//	wxMessageBox("Selected: " + listBox->GetString(listBox->GetSelection()),
+//		"Selection", wxOK | wxICON_INFORMATION);
+//}
 

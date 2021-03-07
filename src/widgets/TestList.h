@@ -2,13 +2,14 @@
 #define TEST_LIST_H
 
 #include "wx_include.h"
+#include <string>
 
 class TestList : public wxPanel
 {
 	wxListBox* listBox;
-	void OnStart(wxCommandEvent& event);
 public:
-	TestList(wxWindow* parent);
+	std::string get_selection();
+	TestList(wxWindow* parent, int id_test_selected);
 };
 
 #endif

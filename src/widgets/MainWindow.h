@@ -2,17 +2,21 @@
 #define MAIN_WINDOW_H
 
 #include "wx_include.h"
+#include <wx/simplebook.h>
+#include "TestList.h"
 
 class MainWindow : public wxFrame
 {
-public:
-	MainWindow();
 private:
+	wxSimplebook* book;
+	TestList* panelTestList;
+
 	void OnExit(wxCommandEvent& event);
 	void OnHello(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
-
-	//wxDECLARE_EVENT_TABLE();
+	void OnTestSelected(wxCommandEvent& event);
+public:
+	MainWindow();
 };
 
 #endif
