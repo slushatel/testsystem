@@ -31,11 +31,9 @@ MainWindow::MainWindow()
 
 	wxSimplebook *book = new wxSimplebook(this);
 	wxPanel *panel1 = new QuestionWidget(book);
-	wxPanel *panel2 = new TestList(book, this);
+	wxPanel *panel2 = new TestList(book);
 	book->ShowNewPage(panel1);
 	book->ShowNewPage(panel2);
-
-
 
 	Center();
 }
@@ -53,6 +51,6 @@ void MainWindow::OnHello(wxCommandEvent &event)
 	wxLogMessage("Hello world from wxWidgets!");
 }
 
-wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
-EVT_BUTTON(11111, MainWindow::OnAbout)
-wxEND_EVENT_TABLE()
+//wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
+//EVT_BUTTON(11111, MainWindow::OnAbout)
+//wxEND_EVENT_TABLE()

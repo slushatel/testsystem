@@ -12,7 +12,7 @@ private:
 	void OnHello(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
 
-	wxDECLARE_EVENT_TABLE();
+	//wxDECLARE_EVENT_TABLE();
 };
 
 #endif
