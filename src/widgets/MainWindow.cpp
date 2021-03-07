@@ -52,3 +52,7 @@ void MainWindow::OnHello(wxCommandEvent &event)
 {
 	wxLogMessage("Hello world from wxWidgets!");
 }
+
+wxBEGIN_EVENT_TABLE(MainWindow, wxFrame)
+EVT_BUTTON(11111, MainWindow::OnAbout)
+wxEND_EVENT_TABLE()

@@ -7,10 +7,12 @@ class MainWindow : public wxFrame
 {
 public:
 	MainWindow();
-	void OnExit(wxCommandEvent& event);
 private:
+	void OnExit(wxCommandEvent& event);
 	void OnHello(wxCommandEvent& event);
 	void OnAbout(wxCommandEvent& event);
+
+	wxDECLARE_EVENT_TABLE();
 };
 
 #endif
