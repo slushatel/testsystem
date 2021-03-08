@@ -3,11 +3,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(TestSystem CXX)
-add_subdirectory(test)
 
 # add these environment settings to "cmake_vars.txt"
 # wxWidgets_ROOT_DIR=d:/install/wx/3.1.4
 # wxWidgets_LIB_DIR=d:/install/wx/3.1.4/lib/vc14x_x64_dll
+# GTEST_ROOT=d:/install/googletest
+# GTEST_INCLUDE_DIR=d:/install/googletest/googletest/include
 file(STRINGS cmake_vars.txt ConfigContents)
 foreach(NameAndValue ${ConfigContents})
   # Strip leading spaces
@@ -16,6 +17,8 @@ foreach(NameAndValue ${ConfigContents})
   string(REPLACE "${Name}=" "" Value ${NameAndValue})
   set(${Name} "${Value}")
 endforeach()
+
+add_subdirectory(test)
 
 file(GLOB_RECURSE test_system_src CONFIGURE_DEPENDS 
 	${PROJECT_SOURCE_DIR}/src/*.cpp

@@ -1,8 +1,8 @@
 
 include(CTest)
 
-set (GTEST_ROOT d:\\install\\googletest)
-set (GTEST_INCLUDE_DIR d:\\install\\googletest\\googletest\\include)
+#set (GTEST_ROOT d:\\install\\googletest)
+#set (GTEST_INCLUDE_DIR d:\\install\\googletest\\googletest\\include)
 find_package(GTest REQUIRED)
 
 file(GLOB_RECURSE tests_src CONFIGURE_DEPENDS 
