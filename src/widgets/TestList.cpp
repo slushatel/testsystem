@@ -34,7 +34,7 @@ TestList::TestList(wxWindow* parent, int id_test_selected) : wxPanel(parent)
 
 std::string TestList::get_selection()
 {
-	return listBox->GetString(listBox->GetSelection());
+	return listBox->GetString(listBox->GetSelection()).ToStdString();
 }
 
 //void TestList::OnStart(wxCommandEvent& event)
