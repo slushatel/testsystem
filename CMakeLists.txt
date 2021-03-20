@@ -18,7 +18,7 @@ foreach(NameAndValue ${ConfigContents})
   set(${Name} "${Value}")
 endforeach()
 
-add_subdirectory(test)
+# add_subdirectory(test)
 
 file(GLOB_RECURSE test_system_src CONFIGURE_DEPENDS 
 	${PROJECT_SOURCE_DIR}/src/*.cpp
