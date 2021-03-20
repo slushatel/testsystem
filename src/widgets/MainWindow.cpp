@@ -33,9 +33,9 @@ MainWindow::MainWindow()
 	book = new wxSimplebook(this);
 	panelTestList = new TestList(book, ID_TEST_SELECTED);
 	Bind(wxEVT_BUTTON, &MainWindow::OnTestSelected, this, ID_TEST_SELECTED);
-	wxPanel* panel2 = new QuestionWidget(book);
+	panelQuestions = new QuestionWidget(book);
 	book->AddPage(panelTestList, "");
-	book->AddPage(panel2, "");
+	book->AddPage(panelQuestions, "");
 	book->SetSelection(0);
 
 	Center();
@@ -58,6 +58,7 @@ void MainWindow::OnTestSelected(wxCommandEvent& event)
 {
 	std::string path = panelTestList->get_selection();
 	book->SetSelection(1);
+	panelQuestions->setTestPath(path);
 	wxMessageBox("Selected: " + path, "Selection", wxOK | wxICON_INFORMATION);
 }
 
